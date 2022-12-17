@@ -211,7 +211,7 @@
     <ClCompile>
       <WarningLevel>Level3</WarningLevel>
       <SDLCheck>true</SDLCheck>
-      <PreprocessorDefinitions>_DEBUG;INTERPROCESSCOMMUNICATION_EXPORTS;_WINDOWS;_USRDLL;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>DLLEXPORT;_DEBUG;INTERPROCESSCOMMUNICATION_EXPORTS;_WINDOWS;_USRDLL;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
       <PrecompiledHeader>Use</PrecompiledHeader>
       <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
@@ -265,6 +265,8 @@
     <ClInclude Include="framework.h" />
     <ClInclude Include="MessageQueue.h" />
     <ClInclude Include="NamedPipe.h" />
+    <ClInclude Include="NamedPipeClient.h" />
+    <ClInclude Include="NamedPipeServer.h" />
     <ClInclude Include="pch.h" />
     <ClInclude Include="SharedMemory.h" />
     <ClInclude Include="Socket.h" />
@@ -275,6 +277,8 @@
     <ClCompile Include="main.cpp" />
     <ClCompile Include="MessageQueue.cpp" />
     <ClCompile Include="NamedPipe.cpp" />
+    <ClCompile Include="NamedPipeClient.cpp" />
+    <ClCompile Include="NamedPipeServer.cpp" />
     <ClCompile Include="pch.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='DebugDll|x64'">Create</PrecompiledHeader>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='DebugExe|x64'">Create</PrecompiledHeader>
@@ -287,6 +291,9 @@
     </ClCompile>
     <ClCompile Include="SharedMemory.cpp" />
     <ClCompile Include="Socket.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="cpp.hint" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

@@ -1,12 +1,18 @@
 #pragma once
 
-#ifdef DLLEXPORT
-#define DllExport __declspec(dllexport)
-#else
-#define DllExport __declspec(dllimport)
-#endif // DLLEXPORT
+#include <string>
 
-class DllExport NamedPipe
+class NamedPipe
 {
-};
+public:
+	NamedPipe();
+	virtual ~NamedPipe();
 
+	int SetPipeName(std::string pipename);
+	const std::string GetPipeName();
+	const std::string GetPipeNameRaw();
+
+protected:
+	std::string pipeNameRaw;
+	std::string pipeName;
+};
